@@ -1,0 +1,9 @@
+Color of an Orange,Orange
+Color of a Blueberry,Blue
+Color of a Blackberry,Purple
+Color of a Cherry blossom,Pink
+Color of a Caucasian,White
+Color of a Strawberry,Red
+Color of a,...
+Make and Model of Your Car,I dunno I'm not you
+Make and Model of a 2003 Honda Civic,2003 Honda Civic 2-Door Coupe 4-Cylinder Turbo EX

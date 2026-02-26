@@ -53,6 +53,7 @@ while len(definitions) < 4:
 definitions = list(definitions)
 random.shuffle(definitions)
 
+
 # ask the user for the answer
 
 print("What is the answer to...")
@@ -61,6 +62,9 @@ print(to_test[0])
 for i, definition in enumerate(definitions):
     letter = ALPHABET[i]
     print(f"{letter}) {definition}")
+
+
+# user guesses
 
 guess_idx = -1
 while True:

@@ -32,48 +32,48 @@ for i, term in enumerate(terms):
 
 # choose random term
 
-term_idx = random.randrange(
-    0, len(terms)
-)
-
-to_test = terms[term_idx]
+random.shuffle(terms)
 
 
-# define possible definitions
+# loop through all flashcards
 
-definitions = { to_test[1] }
+for to_test in terms:
+    # define possible definitions
 
-while len(definitions) < 4:
-    definition_idx = random.randrange(
-        0, len(terms)
-    )
-    definition = terms[definition_idx][1]
-    definitions.add(definition)
+    definitions = { to_test[1] }
 
-definitions = list(definitions)
-random.shuffle(definitions)
+    while len(definitions) < 4:
+        definition_idx = random.randrange(
+            0, len(terms)
+        )
+        definition = terms[definition_idx][1]
+        definitions.add(definition)
 
-
-# ask the user for the answer
-
-print("What is the answer to...")
-print(to_test[0])
-
-for i, definition in enumerate(definitions):
-    letter = ALPHABET[i]
-    print(f"{letter}) {definition}")
+    definitions = list(definitions)
+    random.shuffle(definitions)
 
 
-# user guesses
+    # ask the user for the answer
 
-guess_idx = -1
-while True:
-    guess_idx = input("> ").upper()
-    if len(guess_idx) == 1 and guess_idx in ALPHABET:
-        guess_idx = ALPHABET.index(guess_idx)
-        if guess_idx < len(definitions): break
+    print("What is the definition to...")
+    print(to_test[0])
 
-guess = definitions[guess_idx]
-correct = guess == to_test[1]
+    for i, definition in enumerate(definitions):
+        letter = ALPHABET[i]
+        print(f"{letter}) {definition}")
 
-print("You got it!!!!" if correct else "Uh oh you're dumb...")
+
+    # user guesses
+
+    guess_idx = -1
+    while True:
+        guess_idx = input("> ").upper()
+        if len(guess_idx) == 1 and guess_idx in ALPHABET:
+            guess_idx = ALPHABET.index(guess_idx)
+            if guess_idx < len(definitions): break
+
+    guess = definitions[guess_idx]
+    correct = guess == to_test[1]
+
+    print("You got it!!!!" if correct else "Uh oh you're dumb...")
+    print()
